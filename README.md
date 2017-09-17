@@ -1,3 +1,9 @@
+## General Information
+
+This project utilizes a Node.js server (not provided), along with the react-twitter-auth component to perform the login to Twitter.
+
+[react-twitter-auth](https://github.com/GenFirst/react-twitter-auth)
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

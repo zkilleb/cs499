@@ -1,0 +1,33 @@
+{
+  "name": "cs499",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "angular-cli": "1.0.0-beta.29",
+    "firebase": "^4.6.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-bootstrap": "^0.31.3",
+    "react-dom": "^15.6.1",
+    "react-router": "^3.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-link": "^2.0.2",
+    "react-scripts": "1.0.13",
+    "react-transition-group": "^2.2.1",
+    "react-twitter-auth": "0.0.8",
+    "react-twitter-login": "file:../../",
+    "reactstrap": "^4.8.0",
+    "semantic-ui-react": "^0.75.1"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.13",
+    "typescript": "2.5.3",
+    "@angular/compiler-cli": "^2.3.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

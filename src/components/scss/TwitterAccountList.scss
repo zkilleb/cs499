@@ -1,0 +1,21 @@
+.account {
+  min-height: 100px;
+  box-sizing: border-box;
+  color: #fff;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.account:nth-child(even) {
+  background-color: #3cf;
+}
+
+.account:nth-child(odd) {
+  background-color: #fff;
+  color: #3cf;
+
+  & button {
+    border: 1px solid #3cf;
+    color: #3cf;
+  }
+}

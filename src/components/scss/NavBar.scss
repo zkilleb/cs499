@@ -1,0 +1,18 @@
+.navbar-brand {
+  box-sizing: border-box !important;
+  padding: 0 0 0 15px;
+}
+
+.navbar-toggle {
+  margin-right: 30px;
+  border-color: #3cf !important;
+  .icon-bar {
+    background-color: #3cf !important;
+  }
+}
+
+.navbar-default {
+  .navbar-nav > li > a {
+    color: #3cf !important;
+  }
+}

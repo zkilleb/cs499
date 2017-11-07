@@ -1,0 +1,94 @@
+.container {
+  margin-top: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: grey;
+  display: block;
+  &:hover {
+    cursor: pointer;
+  }
+}
+label {
+  display: block;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 25px;
+}
+.backButton {
+  padding: 20px 0px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #1c304a;
+}
+
+.flexContainer {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.height {
+  height: 33.3333vh;
+}
+
+.flexWhole {
+  flex: 100%;
+}
+
+.justifiedCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.box {
+  composes: height justifiedCenter;
+  color: #fff;
+  font-size: 30px;
+}
+
+.fullBoxes {
+  composes: box flexWhole;
+}
+
+.region {
+  composes: fullBoxes;
+  background: #3cf;
+}
+
+.language {
+  composes: fullBoxes;
+  background: #046b99;
+}
+
+.nsfw {
+  composes: fullBoxes;
+  background: #3cf;
+}
+
+.misc {
+  composes: fullBoxes;
+  background: #046b99;
+}
+
+.close {
+  background-color: #3cf;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 2px;
+  border: 0;
+}
+
+.modalHeader {
+  border-bottom: 1px #046b99 solid;
+}
+
+input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+}

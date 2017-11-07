@@ -1,8 +1,9 @@
 ## General Information
 
-This project utilizes a Node.js server (not provided), along with the react-twitter-auth component to perform the login to Twitter.
+This project utilizes a firebase-auth to login to a user's Twitter account.
+The web page is created using React and implements routing to link between pages.
 
-[react-twitter-auth](https://github.com/GenFirst/react-twitter-auth)
+[firebase-auth](https://firebase.google.com/docs/auth/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 

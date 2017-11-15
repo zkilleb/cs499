@@ -2,55 +2,74 @@ import React, { Component } from 'react';
 import TwitterLogin from 'react-twitter-auth/lib/react-twitter-auth-component.js';
 import { Navbar, Jumbotron, Button, Label, Grid, Row, Nav, NavItem, Col, Image } from 'react-bootstrap';
 import './App.css';
-import Main from './main'
-import { Link } from 'react-router-link'
-import firebase, { auth, provider } from './firebase.js';
+import Main from './main';
+import { Link } from 'react-router-link';
+import {loginWithTwitter} from './helpers/auth';
+import firebase, { auth, provider } from './config/firebase.js';
 
 const firebaseAuthKey = "firebaseAuthInProgress";
+let appToken;
 
+var database = firebase.database();
 
 class login extends Component {
 
   constructor() {
     super();
 
-	this.login = this.login.bind(this); 
-	
 	this.state = {
-		user: null
+		user: null,
+    accessToken: '',
+    accessTokenSecret: ''
 	}
+	
+	this.login = this.login.bind(this);
+	
   }
 
 login() {
-  auth.signInWithPopup(provider) 
+  //loginWithTwitter()
+  auth.signInWithPopup(provider)
     .then((result) => {
-      const user = result.user;
+     const user = result.user;
+     const accessToken = result.credential.accessToken;
+     const accessTokenSecret = result.credential.secret;
       this.setState({
-        user
+        user,
+        accessToken,
+        accessTokenSecret
       });
     });
+	console.log(this.state.user);
 	localStorage.setItem(firebaseAuthKey, "1");
 }
-  
-  
+
+
+
   componentDidMount() {
   auth.onAuthStateChanged((user) => {
     if (user) {
       this.setState({ user });
-    } 
+	  localStorage.setItem(appToken, user.uid);
+	  //this.props.history.push("main")
+    }
+    //else{
+  //    appToken = 1;
+    //}
   });
   }
 
 
   render() {
-	  
+
 	  	 if (localStorage.getItem(firebaseAuthKey) === "1"){
-	 window.location = 'main';
+	 window.location = 'user';
 	 localStorage.removeItem(firebaseAuthKey);
   }
-	  
+
+
     return (
-	
+
 
 
       <div className="background">
@@ -91,11 +110,11 @@ login() {
       <Col xs={10} md={5}></Col>
 
       <Col xs={6} md={4}>
-	  
+
 	  <div className="wrapper">
- 
-    <button onClick={this.login}>Log In</button>     
-  
+
+    <button onClick={this.login}>Log In</button>
+
 </div>
 	  </Col>
     </Row>
@@ -103,7 +122,7 @@ login() {
 
 
 		</Jumbotron>
-		
+
 		<div className="footer">
 		 <Grid>
 
@@ -131,7 +150,5 @@ login() {
     );
   }
 }
-
- 
 
 export default login;

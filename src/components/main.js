@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Login from './login'
+import loginUser from './loginUser'
 import Home from './views/App'
 
 // The Main component renders one of the three provided
@@ -13,6 +14,7 @@ const Main = () => (
     <Switch>
       <Route exact path='/' component={Login}/>
       <Route path='/main' component={Home}/>
+	  <Route path='/user' component={loginUser}/>
     </Switch>
   </main>
 )
